@@ -10,7 +10,7 @@ namespace NLayer.Core
     {
         public int Id { get; set; }
         public DateTime CreatedDate { get; set; }
-        public DateTime Updateddate { get; set; }
+        public DateTime? Updateddate { get; set; }
 
     }
 }
