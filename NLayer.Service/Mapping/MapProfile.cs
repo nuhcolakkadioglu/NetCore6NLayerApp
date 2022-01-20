@@ -17,8 +17,9 @@ namespace NLayer.Service.Mapping
             CreateMap<Category, CategoryDto>().ReverseMap();
             CreateMap<ProductFeature, ProductFeatureDto>().ReverseMap();
             CreateMap<ProductUpdateDto, Category>();
+            CreateMap<Product, ProductWithCategoryDto>().ReverseMap();
 
-
+            
         }
     }
 }

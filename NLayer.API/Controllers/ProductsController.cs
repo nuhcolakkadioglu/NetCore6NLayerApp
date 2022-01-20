@@ -14,12 +14,23 @@ namespace NLayer.API.Controllers
     {
         private readonly IMapper _mapper;
         private readonly IService<Product> _service;
+        private readonly IProductService _productService;
 
-        public ProductsController(IMapper mapper, IService<Product> service)
+        public ProductsController(IMapper mapper, IService<Product> service, IProductService productService)
         {
             _mapper = mapper;
             _service = service;
+            _productService = productService;
         }
+
+        [HttpGet("GetProductWithcCategory")]
+        public async Task<IActionResult> GetProductWithcCategory()
+        {
+
+            return CreateActionResult(await _productService.GetProductWithCategory());
+        }
+
+
         [HttpGet]
         public async Task<IActionResult> All()
         {
@@ -48,7 +59,7 @@ namespace NLayer.API.Controllers
         [HttpPut]
         public async Task<IActionResult> Update(ProductUpdateDto model)
         {
-             await _service.UpdateAsync(_mapper.Map<Product>(model));
+            await _service.UpdateAsync(_mapper.Map<Product>(model));
 
             return CreateActionResult(CustomResponseDto<NoContentDto>.Success(204));
         }
@@ -59,7 +70,7 @@ namespace NLayer.API.Controllers
             var productDelete = await _service.GetByIdAsync(id);
 
             if (productDelete == null)
-                return CreateActionResult( CustomResponseDto<NoContentDto>.Fail(404, "Kayıt bulunamadı"));
+                return CreateActionResult(CustomResponseDto<NoContentDto>.Fail(404, "Kayıt bulunamadı"));
 
             await _service.RemoveAsync(productDelete);
 
