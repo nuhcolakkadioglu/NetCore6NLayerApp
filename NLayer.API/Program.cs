@@ -1,3 +1,4 @@
+using FluentValidation.AspNetCore;
 using Microsoft.EntityFrameworkCore;
 using NLayer.Core.Repositories;
 using NLayer.Core.Services;
@@ -7,12 +8,13 @@ using NLayer.Repository.Repositories;
 using NLayer.Repository.UnitOfWork;
 using NLayer.Service.Mapping;
 using NLayer.Service.Services;
+using NLayer.Service.Validations;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddFluentValidation(m=>m.RegisterValidatorsFromAssemblyContaining<ProductDtoValidator>());
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
@@ -32,6 +34,8 @@ builder.Services.AddDbContext<AppDbContext>(opt =>
         opt.MigrationsAssembly(Assembly.GetAssembly(typeof(AppDbContext)).GetName().Name);
     });
 });
+
+
 
 
 var app = builder.Build();
