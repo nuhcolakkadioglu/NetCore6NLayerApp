@@ -31,6 +31,8 @@ builder.Services.Configure<ApiBehaviorOptions>(opt =>
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddMemoryCache();
+
 
 builder.Services.AddAutoMapper(typeof(MapProfile));
 builder.Services.AddScoped(typeof(NotFoundFilter<>));
