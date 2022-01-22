@@ -23,7 +23,7 @@ namespace NLayer.Web.Controllers
 		{
 			var customResponse = await _productService.GetProductWithCategory();
 
-			return View(customResponse);
+			return View(customResponse.Data);
 		}
 
 		public async Task<IActionResult> Save()

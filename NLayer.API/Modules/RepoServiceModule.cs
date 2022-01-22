@@ -29,7 +29,7 @@ namespace NLayer.API.Modules
 
 			builder.RegisterAssemblyTypes(apiAssembly, repoAssembly, serviceAssembly).Where(m => m.Name.EndsWith("Service")).AsImplementedInterfaces().InstancePerLifetimeScope();
 
-			builder.RegisterType<ProductServiceWithCaching>().As<IProductService>();
+			//builder.RegisterType<ProductServiceWithCaching>().As<IProductService>();
 		}
 	}
 }
