@@ -1,25 +1,23 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using NLayer.API.Filters;
+﻿using Microsoft.AspNetCore.Mvc;
 using NLayer.Core.Services;
 
 namespace NLayer.API.Controllers
 {
-   
 
-    public class CategoriesController : CustomBaseController
-    {
-        private readonly ICategoryService _categoryService;
 
-        public CategoriesController(ICategoryService  categoryService)
-        {
-            _categoryService = categoryService;
-        }
+	public class CategoriesController : CustomBaseController
+	{
+		private readonly ICategoryService _categoryService;
 
-        [HttpGet("GetSingleCateogryByWithProduct/{id}")]
-        public async Task<IActionResult> GetSingleCateogryByWithProduct(int id)
-        {
-            return CreateActionResult(await _categoryService.GetSingleCateogryByWithProductAsync(id));
-        }
-    }
+		public CategoriesController(ICategoryService categoryService)
+		{
+			_categoryService = categoryService;
+		}
+
+		[HttpGet("GetSingleCateogryByWithProduct/{id}")]
+		public async Task<IActionResult> GetSingleCateogryByWithProduct(int id)
+		{
+			return CreateActionResult(await _categoryService.GetSingleCateogryByWithProductAsync(id));
+		}
+	}
 }

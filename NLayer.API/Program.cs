@@ -6,27 +6,22 @@ using Microsoft.EntityFrameworkCore;
 using NLayer.API.Filters;
 using NLayer.API.Middlewares;
 using NLayer.API.Modules;
-using NLayer.Core.Repositories;
-using NLayer.Core.Services;
-using NLayer.Core.UnitOfWorks;
 using NLayer.Repository;
-using NLayer.Repository.Repositories;
-using NLayer.Repository.UnitOfWork;
 using NLayer.Service.Mapping;
-using NLayer.Service.Services;
 using NLayer.Service.Validations;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 
-builder.Services.AddControllers(opt => {
-    opt.Filters.Add(new ValidateFilterAttribute());
-}).AddFluentValidation(m=>m.RegisterValidatorsFromAssemblyContaining<ProductDtoValidator>());
+builder.Services.AddControllers(opt =>
+{
+	opt.Filters.Add(new ValidateFilterAttribute());
+}).AddFluentValidation(m => m.RegisterValidatorsFromAssemblyContaining<ProductDtoValidator>());
 
 builder.Services.Configure<ApiBehaviorOptions>(opt =>
 {
-     opt.SuppressModelStateInvalidFilter=true;
+	opt.SuppressModelStateInvalidFilter = true;
 });
 
 builder.Services.AddEndpointsApiExplorer();
@@ -40,9 +35,10 @@ builder.Services.AddScoped(typeof(NotFoundFilter<>));
 
 builder.Services.AddDbContext<AppDbContext>(opt =>
 {
-    opt.UseSqlServer(builder.Configuration.GetConnectionString("SqlConnection"), opt => {
-        opt.MigrationsAssembly(Assembly.GetAssembly(typeof(AppDbContext)).GetName().Name);
-    });
+	opt.UseSqlServer(builder.Configuration.GetConnectionString("SqlConnection"), opt =>
+	{
+		opt.MigrationsAssembly(Assembly.GetAssembly(typeof(AppDbContext)).GetName().Name);
+	});
 });
 
 
@@ -53,8 +49,8 @@ var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+	app.UseSwagger();
+	app.UseSwaggerUI();
 }
 
 app.UseHttpsRedirection();

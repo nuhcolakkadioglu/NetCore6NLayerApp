@@ -5,15 +5,15 @@ VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NLayer.Core", "NLayer.Core\NLayer.Core.csproj", "{2440F153-C072-48F3-8B4B-09C3C7F635E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLayer.Repository", "NLayer.Repository\NLayer.Repository.csproj", "{ED0C4DCB-7B8E-472F-8644-5BE3E32C237E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NLayer.Repository", "NLayer.Repository\NLayer.Repository.csproj", "{ED0C4DCB-7B8E-472F-8644-5BE3E32C237E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLayer.Service", "NLayer.Service\NLayer.Service.csproj", "{40A000FF-7AC0-400E-8763-11E46F08FC3D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NLayer.Service", "NLayer.Service\NLayer.Service.csproj", "{40A000FF-7AC0-400E-8763-11E46F08FC3D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLayer.API", "NLayer.API\NLayer.API.csproj", "{65B7DF04-C4FD-426A-AD20-046EAD51675C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NLayer.API", "NLayer.API\NLayer.API.csproj", "{65B7DF04-C4FD-426A-AD20-046EAD51675C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLayer.Web", "NLayer.Web\NLayer.Web.csproj", "{C86A3EFC-D949-41F5-A62B-C4A974DB8740}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NLayer.Web", "NLayer.Web\NLayer.Web.csproj", "{C86A3EFC-D949-41F5-A62B-C4A974DB8740}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLayer.Caching", "NLayer.Caching\NLayer.Caching.csproj", "{E74FF390-FA5C-4B29-84E2-9B28E9F6CF6C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NLayer.Caching", "NLayer.Caching\NLayer.Caching.csproj", "{E74FF390-FA5C-4B29-84E2-9B28E9F6CF6C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,7 +34,6 @@ Global
 		{40A000FF-7AC0-400E-8763-11E46F08FC3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{40A000FF-7AC0-400E-8763-11E46F08FC3D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{65B7DF04-C4FD-426A-AD20-046EAD51675C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{65B7DF04-C4FD-426A-AD20-046EAD51675C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65B7DF04-C4FD-426A-AD20-046EAD51675C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65B7DF04-C4FD-426A-AD20-046EAD51675C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C86A3EFC-D949-41F5-A62B-C4A974DB8740}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
