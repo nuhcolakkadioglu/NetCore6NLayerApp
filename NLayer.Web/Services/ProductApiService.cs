@@ -30,7 +30,7 @@ namespace NLayer.Web.Services
 
         public async Task<ProductDto> GetByIdAsync(int id)
         {
-            var response = await _httpClient.GetFromJsonAsync<CustomResponseDto<ProductDto>>($"products/GetById/{id}");
+            var response = await _httpClient.GetFromJsonAsync<CustomResponseDto<ProductDto>>($"products/{id}");
             //if (response.Errors.Any())
             //    return CustomResponseDto<ProductDto>.Fail(500, "error");
             return response.Data;
